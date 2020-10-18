@@ -18,7 +18,7 @@ inputs:
 runs:
   using: "composite"
   steps: 
-    - run: echo test ${{ inputs.use-maven }} || echo use maven is false
+    - run: echo test ${{ inputs.use-maven = false }} || echo use maven is false
       shell: bash
     - run: echo hello world my friend , javadocs directory is ${{ inputs.javadocs }} , branch is ${{ inputs.branch }}
       shell: bash
