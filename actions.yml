@@ -1,0 +1,27 @@
+name: 'Push Javadocs'
+description: 'Push Javadocs into new Branch, it won't generate javadocs itself, you need to use maven to create javadoc'
+author: 'Eric Lam'
+
+inputs:
+  branch:
+    description: 'the branch that push into'
+    required: false
+    default: 'gh-pages'
+  javadocs:
+    description: 'the javadocs directory name'
+    required: true
+  use-maven:
+    description: 'if true, it will run mvn clean first'
+    required: false
+    default: false
+
+runs:
+  using: "composite"
+  steps: 
+    - if ${{ ${{ inputs.use-maven }}
+      run: mvn clean
+      shell: bash
+    - run: |
+       echo hello world my friend
+       echo javadocs directory is ${{ inputs.javadocs }}
+       echo branch is ${{ inputs.branch }}
