@@ -18,6 +18,7 @@ inputs:
 runs:
   using: "composite"
   steps: 
-    - uses: 'actions/checkout@v2'
+    - run: ls -la
+      shell: bash
     - run: sh javadoc.sh ${{ inputs.branch }} ${{ inputs.javadocs }} ${{ inputs.use-maven }}
       shell: bash
