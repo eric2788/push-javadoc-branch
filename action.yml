@@ -18,17 +18,16 @@ inputs:
 runs:
   using: "composite"
   steps: 
-    - run: |
-      if [ ${{ inputs.use-maven }} = true ]
-      then
-        echo using maven, running mvn clean
-        mvn clean
-      else
-        echo not using maven, skipped this step
+    - run: \
+      if [ ${{ inputs.use-maven }} = true ] \
+      then \
+        echo using maven, running mvn clean \
+        mvn clean \
+      else \
+        echo not using maven, skipped this step \
       fi
       shell: bash
-    - run: |
-       echo hello world my friend
-       echo javadocs directory is ${{ inputs.javadocs }}
-       echo branch is ${{ inputs.branch }}
+    - run: echo hello world my friend \
+           echo javadocs directory is ${{ inputs.javadocs }} \
+           echo branch is ${{ inputs.branch }}
       shell: bash
