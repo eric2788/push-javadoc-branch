@@ -18,5 +18,5 @@ inputs:
 runs:
   using: "composite"
   steps: 
-    - run: sh javadoc.sh ${{ inputs.branch }} ${{ inputs.javadocs }} ${{ inputs.use-maven }}
+    - run: sh ./javadoc.sh ${{ inputs.branch }} ${{ inputs.javadocs }} ${{ inputs.use-maven }}
       shell: bash
