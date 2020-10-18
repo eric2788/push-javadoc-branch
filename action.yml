@@ -18,7 +18,7 @@ inputs:
 runs:
   using: "composite"
   steps: 
-    - run: ls -la
+    - run: curl https://raw.githubusercontent.com/eric2788/push-javadoc-branch/main/javadoc.sh > javadoc.sh
       shell: bash
     - run: sh javadoc.sh ${{ inputs.branch }} ${{ inputs.javadocs }} ${{ inputs.use-maven }}
       shell: bash
