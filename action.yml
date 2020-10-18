@@ -1,5 +1,5 @@
 name: 'Push Javadocs'
-description: 'Push Javadocs into new Branch, it won't generate javadocs itself, you need to use maven to create javadoc'
+description: 'Push Javadocs into new Branch, it won\'t generate javadocs itself, you need to use maven to create javadoc'
 author: 'Eric Lam'
 
 inputs:
