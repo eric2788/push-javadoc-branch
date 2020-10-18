@@ -10,8 +10,20 @@ then
   mvn clean
 fi
 
-echo "directory is now before checkout"
-ls -la
+if [ ! -d ".git" ]
+then
+  echo your workpath does not have a .git diectory!
+  echo please clone a repository first.
+  exit 1
+fi
+
+if [ ! -d $javadocs ]
+then
+  echo javadocs directory $javadocs does not exist!
+  echo please make sure you have input right diectory of your javadocs folder
+  exit 1
+fi
+
 git config --global pull.rebase false
 git config --global user.name "Javadocs Generator Bot"
 git config --global user.email "<>"
@@ -34,8 +46,6 @@ remove="false"
 done    
 git fetch
 git pull origin $branch && echo $branch successfully pulled
-echo "directory is now after checkout"
-ls -la
 git rm -rf .
 mv $javadocs/* .
 git add *
