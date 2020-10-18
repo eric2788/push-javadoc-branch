@@ -18,7 +18,7 @@ inputs:
 runs:
   using: "composite"
   steps: 
-    - if ${{ inputs.use-maven }}
+    - if: ${{ inputs.use-maven }}
       run: mvn clean
       shell: bash
     - run: |
