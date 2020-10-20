@@ -7,7 +7,7 @@ maven=$3
 if [ $maven = true ]
 then
   echo using maven, running mvn clean
-  mvn clean
+  mvn -B clean
 fi
 
 if [ ! -d ".git" ]
